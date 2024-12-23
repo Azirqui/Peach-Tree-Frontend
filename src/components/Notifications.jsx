@@ -9,9 +9,9 @@ const Notifications = () => {
         const fetchNotifications = async () => {
             try {
                 // Check for low stock products and add notifications
-                await axios.post(`${apiUrl}/api/notifications/check-low-stock`);
+                await axios.post(`${apiUrl}/api/notifications/check-low-stock`.replace(/\/\//g, '/'));
 
-                const response = await axios.get(`${apiUrl}/api/notifications`);
+                const response = await axios.get(`${apiUrl}/api/notifications`.replace(/\/\//g, '/'));
                 setNotifications(response.data);
             } catch (error) {
                 console.error('Error fetching notifications:', error);
@@ -24,7 +24,7 @@ const Notifications = () => {
     const deleteNotification = async (id) => {
         console.log(id);
         try {
-            await axios.delete(`${apiUrl}/api/notifications/${id}`);
+            await axios.delete(`${apiUrl}/api/notifications/${id}`.replace(/\/\//g, '/'));
             // Filter out the deleted notification from the state
             setNotifications(notifications.filter((notification) => notification._id !== id));
         } catch (error) {

@@ -27,7 +27,7 @@ function AddOrder() {
 
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/api/products`);
+        const response = await axios.get(`${apiUrl}/api/products`.replace(/\/\//g, '/'));
         setProducts(response.data);
         setFilteredProducts(response.data);
       } catch (error) {
@@ -140,13 +140,13 @@ function AddOrder() {
 
     try {
       // Send the bill data to the backend
-      const response = await axios.post(`${apiUrl}/api/bills`, billData);
+      const response = await axios.post(`${apiUrl}/api/bills`.replace(/\/\//g, '/'), billData);
       const { billId } = response.data.bill;
 
       // Update stock for each product sold
       await Promise.all(
         selectedProducts.map((product) =>
-          axios.post(`${apiUrl}/api/products/update-stock`, {
+          axios.post(`${apiUrl}/api/products/update-stock`.replace(/\/\//g, '/'), {
             productID: product.productID,
             quantitySold: product.quantity,
           })

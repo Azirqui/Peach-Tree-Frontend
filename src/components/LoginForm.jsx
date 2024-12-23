@@ -49,7 +49,7 @@ const LoginForm = () => {
 
       // Submit the login form
       try {
-        const response = await fetch(`${apiUrl}/auth/login`, {
+        const response = await fetch(`${apiUrl}/auth/login`.replace(/\/\//g, '/'), {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

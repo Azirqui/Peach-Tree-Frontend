@@ -24,7 +24,7 @@ const UpdateSupplierForm = ({ supplier, onClose, fetchSuppliers }) => {
 
     try {
       // Use the supplier's auto-generated ID for the update request
-      await axios.put(`${apiUrl}/api/suppliers/update/${updatedSupplier.id}`, updatedSupplier);
+      await axios.put(`${apiUrl}/api/suppliers/update/${updatedSupplier.id}`.replace(/\/\//g, '/'), updatedSupplier);
 
       alert("Supplier updated successfully!");
       setLoading(false);

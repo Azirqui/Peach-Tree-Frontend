@@ -19,7 +19,7 @@ const AddProduct = ({ onProductAdded, onClose }) => {
     useEffect(() => {
       const fetchSuppliers = async () => {
         try {
-          const response = await axios.get(`${apiUrl}/api/suppliers`); // Replace with your actual endpoint
+          const response = await axios.get(`${apiUrl}/api/suppliers`.replace(/\/\//g, '/')); // Replace with your actual endpoint
           const suppliers = response.data.map((supplier) => supplier.id); // Assuming supplier objects have an `id` field
           setSupplierOptions(suppliers);
         } catch (error) {
@@ -75,7 +75,7 @@ const AddProduct = ({ onProductAdded, onClose }) => {
     };
 
     try {
-      const response = await axios.post(`${apiUrl}/api/products`, newProduct);
+      const response = await axios.post(`${apiUrl}/api/products`.replace(/\/\//g, '/'), newProduct);
       console.log('Product added successfully', response);
       setSuccess('Product added successfully');
       onProductAdded(); // Trigger onProductAdded callback if needed

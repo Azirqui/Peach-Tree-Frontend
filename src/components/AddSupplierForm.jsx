@@ -27,7 +27,7 @@ const AddSupplierForm = ({ onClose, fetchSuppliers }) => {
 
     try {
       // Send the data to the backend to create the supplier
-      await axios.post(`${apiUrl}/api/suppliers/add`, newSupplier);
+      await axios.post(`${apiUrl}/api/suppliers/add`.replace(/\/\//g, '/'), newSupplier);
 
       setSuccess("Supplier added successfully!");
       setLoading(false);

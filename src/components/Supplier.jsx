@@ -13,7 +13,7 @@ const Supplier = () => {
   // Fetch all suppliers from the backend
   const fetchSuppliers = async () => {
     try {
-      const res = await axios.get(`${apiUrl}/api/suppliers`);
+      const res = await axios.get(`${apiUrl}/api/suppliers`.replace(/\/\//g, '/'));
       setSuppliers(res.data);
     } catch (err) {
       console.error("Error fetching suppliers:", err);
@@ -32,7 +32,7 @@ const Supplier = () => {
 
   const handleDelete = async (supplierId) => {
     try {
-      await axios.delete(`${apiUrl}/api/suppliers/delete/${supplierId}`);
+      await axios.delete(`${apiUrl}/api/suppliers/delete/${supplierId}`.replace(/\/\//g, '/'));
       setSuppliers(suppliers.filter(supplier => supplier.id !== supplierId));  // Update UI
     } catch (err) {
       console.error("Error deleting supplier:", err);

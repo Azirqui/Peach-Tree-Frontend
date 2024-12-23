@@ -20,7 +20,7 @@ const ViewOrder = () => {
 
         // Fetch bills based on the username
         const response = await fetch(
-          `${apiUrl}/api/bills?billMakerUsername=${encodeURIComponent(username)}`
+          `${apiUrl}/api/bills?billMakerUsername=${encodeURIComponent(username)}`.replace(/\/\//g, '/')
         );
 
         // Debugging logs

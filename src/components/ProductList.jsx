@@ -10,7 +10,7 @@ const ProductList = ({ products = [], setProducts }) => {
   // Function to handle product deletion
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${apiUrl}/api/products/${id}`);
+      await axios.delete(`${apiUrl}/api/products/${id}`.replace(/\/\//g, '/'));
       const updatedProducts = products.filter((product) => product.productID !== id);
       setProducts(updatedProducts);
     } catch (error) {
@@ -27,7 +27,7 @@ const ProductList = ({ products = [], setProducts }) => {
   const handleSave = async (updatedProduct) => {
     try {
       const response = await axios.put(
-        `${apiUrl}/api/products/${updatedProduct.productID}`,
+        `${apiUrl}/api/products/${updatedProduct.productID}`.replace(/\/\//g, '/'),
         updatedProduct
       );
 
@@ -61,7 +61,7 @@ const ProductList = ({ products = [], setProducts }) => {
 
   const handleProductAdded = async () => {
     try {
-      const response = await axios.get(`${apiUrl}/api/products`);
+      const response = await axios.get(`${apiUrl}/api/products`.replace(/\/\//g, '/'));
       setProducts(response.data); // Update the product list after adding a product
     } catch (error) {
       console.error('Error fetching products:', error);

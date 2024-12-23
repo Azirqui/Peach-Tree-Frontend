@@ -28,7 +28,7 @@ const SignupForm = () => {
 
   const checkAvailability = async () => {
     try {
-      const response = await fetch(`${apiUrl}/auth/checkAvailability`, {
+      const response = await fetch(`${apiUrl}/auth/checkAvailability`.replace(/\/\//g, '/'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ const SignupForm = () => {
 
       // Submit the signup form
       try {
-        const response = await fetch(`${apiUrl}/auth/signup`, {
+        const response = await fetch(`${apiUrl}/auth/signup`.replace(/\/\//g, '/'), {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
