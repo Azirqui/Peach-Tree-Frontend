@@ -1,0 +1,47 @@
+.admin-home-container {
+    display: flex;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .admin-home-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: margin-left 0.3s ease; /* Smooth transition when sidebar appears */
+  }
+  
+  .admin-home-content.with-sidebar {
+    margin-left: 250px; /* Adjust based on sidebar width */
+  }
+  
+  .admin-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .infinity-loop-container {
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+    border: 2px solid #1e40af; /* Metallic blue border */
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    background: radial-gradient(circle, #1e3a8a, #0f172a); /* Gradient background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.9s ease;
+  }
+  
+  .infinity-loop-container:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+  }
+  
+  
+
+  

@@ -1,0 +1,62 @@
+/* src/css/AdminHome.css */
+
+.admin-home-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #1f1f1f;
+  }
+  
+  .admin-home-content {
+    flex-grow: 1;
+    padding: 40px;
+    text-align: center;
+    color: white;
+  }
+  
+  .admin-heading {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .infinity-loop-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+  }
+  
+  .infinity-loop {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    animation: rotate-infinity 4s linear infinite;
+  }
+  
+  .infinity-loop::before,
+  .infinity-loop::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    animation: rotate-infinity 4s linear infinite;
+  }
+  
+  .infinity-loop::before {
+    transform: rotate(45deg);
+  }
+  
+  .infinity-loop::after {
+    transform: rotate(-45deg);
+  }
+  
+  @keyframes rotate-infinity {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

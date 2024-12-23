@@ -1,0 +1,204 @@
+/* General Body and Container Styling */
+body {
+    /* background-color: #121212; */
+    background-color: #ffffff;
+    color: #ffffff; /* White text for readability */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    padding: 2rem;
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: #00e676; /* Bright green for headers */
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Cards */
+  .card {
+    /* background-color: #1e1e1e; */
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 2px solid #00e676; /* Bright green border for high contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    color: #00e676;
+    border-bottom: 2px solid #00e676;
+    padding-bottom: 0.5rem;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #1e1e1e;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-left: 5px solid #00e676;
+    color: #ffffff;
+  }
+  
+  li:hover {
+    background-color: #333333;
+  }
+  
+  /* Buttons */
+  button {
+    background-color: #00e676;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #00c853;
+  }
+  
+  /* Alerts */
+  .alert {
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .alert-danger {
+    background-color: #ff5252;
+    color: #ffffff;
+    border-left: 5px solid #ff1744;
+  }
+  
+  .alert-success {
+    background-color: #4caf50;
+    color: #ffffff;
+    border-left: 5px solid #00e676;
+  }
+  
+  /* Loading Spinner */
+  .spinner-border {
+    color: #00e676 !important;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #00e676;
+    color: #ffffff;
+  }
+  
+  th {
+    background-color: #1e1e1e;
+    color: #00e676;
+    font-weight: bold;
+  }
+  
+  tr:hover {
+    background-color: #333333;
+  }
+  
+  /* Charts */
+  .canvas-container {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .chartjs-render-monitor {
+    background-color: #121212 !important;
+  }
+  
+  canvas {
+    background-color: #121212 !important;
+  }
+  
+  /* Forms */
+  input[type="text"], 
+  input[type="email"], 
+  input[type="password"], 
+  textarea {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 2px solid #00e676;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  input[type="text"]:focus, 
+  input[type="email"]:focus, 
+  input[type="password"]:focus, 
+  textarea:focus {
+    outline: none;
+    border-color: #00e676;
+  }
+  
+  input::placeholder {
+    color: #aaaaaa;
+  }
+  
+  button[type="submit"] {
+    background-color: #00e676;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #00c853;
+  }
+  
+  /* Rows & Columns */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .col {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .col {
+      flex: 1 1 100%;
+    }
+  
+    .card {
+      margin-bottom: 1.5rem;
+    }
+  }
+  

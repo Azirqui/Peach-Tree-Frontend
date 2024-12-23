@@ -1,0 +1,78 @@
+/* src/css/AdminSidebar.css */
+
+/* Fixed Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;  /* Set sidebar width */
+  background-color: #1a202c;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+/* Ensure body takes full height */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Content area has margin to account for the sidebar */
+.content-area {
+  margin-left: 300px;  /* Make space for fixed sidebar */
+  padding: 2rem;
+  height: 100vh;
+  overflow-y: auto;  /* Allow scrolling in content */
+}
+
+/* Fancy Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px; /* Adjust width */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background-color: #2d2d2d; /* Background of the scrollbar */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #4b4b4b; /* Scrollbar color */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #616161; /* Hover effect */
+  }
+
+/* Sidebar styles */
+.sidebar {
+  max-height: 100vh;  /* Sidebar should not exceed the screen height */
+  overflow-y: hidden; /* Initially disable scrolling */
+  transition: overflow-y 0.3s ease;
+}
+
+/* When mouse is over the sidebar, allow it to scroll */
+.sidebar.hovered {
+  overflow-y: auto;
+}
+
+/* Allow the page to scroll only when hovering over the page (not the sidebar) */
+body {
+  overflow-y: auto;
+}
+
+/* Smooth scrolling for the sidebar */
+.sidebar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
